@@ -1,0 +1,32 @@
+An (almost) exhaustive list of materials used.
+
+Lego
+  Hogwarts train
+  Holiday train
+  Crocodile engine
+  Freight?
+  High speed?
+  Too much track!
+Pelican case containing:
+  Industrial 10/100/1000 managed switch
+  Industrial firewall
+  NUC running ESXi and the following VMs
+    HMI
+    Tenable OT
+    lightweight Linux w/Ansible for quick config changes, as well as NodeRed for controlling the trains themselves
+  Modicon M221
+  Powerstrip for AC
+  mini AP for train <-> NodeRed comms
+  24v power
+  48v power
+  DC distribution block
+  panel mount C18
+  panel mount ethernet
+  covered kill switch
+  plexiglass panel for mounting stuff (hey, it was free)
+  12 gauge wire for AC and DC connections
+  18" Cat6 for connectivity
+
+needs:
+reed switches
+Lego motors to drive the points
