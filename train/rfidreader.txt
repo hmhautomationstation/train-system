@@ -1,0 +1,377 @@
+/*
+builtin serial pins:
+serial1	d18/19
+serial2	d16/17
+serial3	d14/15
+
+#include <SoftwareSerial.h>
+SoftwareSerial port1(14, 10);
+SoftwareSerial port2(15, 11);
+SoftwareSerial port3(16, 12);
+SoftwareSerial port4(17, 13);
+SoftwareSerial port5(46, 50);
+SoftwareSerial port6(47, 51);
+SoftwareSerial port7(48, 52);
+SoftwareSerial port8(49, 53);
+SoftwareSerial port9(54, 62);
+SoftwareSerial port10(55, 63);
+SoftwareSerial port11(56, 64);
+SoftwareSerial port12(57, 65);
+SoftwareSerial port13(58, 66);
+SoftwareSerial port14(59, 67);
+SoftwareSerial port15(60, 68);
+SoftwareSerial port16(61, 69);
+
+int data1 = 0;
+int ok = -1;
+int yes = 13;
+int no = 12;
+int RFIDnum = 0;
+
+// use first sketch in http://wp.me/p3LK05-3Gk to get your tag numbers
+int tag1[14] = {2,52,48,48,48,56,54,66,49,52,70,51,56,3};
+int tag2[14] = {2,52,48,48,48,56,54,67,54,54,66,54,66,3};
+int tag3[14] = {2,52,48,48,48,56,54,67,54,54,66,54,66,3};
+int tag4[14] = {2,52,48,48,48,56,54,67,54,54,66,54,66,3};
+int tag5[14] = {2,52,48,48,48,56,54,67,54,54,66,54,66,3};
+int tag6[14] = {2,52,48,48,48,56,54,67,54,54,66,54,66,3};
+int newtag[14] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0}; // used for read comparisons
+
+boolean comparetag(int aa[14], int bb[14])
+{
+  boolean ff = false;
+  int fg = 0;
+  for (int cc = 0 ; cc < 14 ; cc++)
+  {
+    if (aa[cc] == bb[cc])
+    {
+      fg++;
+    }
+  }
+  if (fg == 14)
+  {
+    ff = true;
+  }
+  return ff;
+}
+
+void checkmytags() // compares each tag against the tag just read
+{
+  if (comparetag(newtag, tag1) == true)
+  {
+    tellLocationBoard(1, RFIDnum);
+  }
+  if (comparetag(newtag, tag2) == true)
+  {
+    tellLocationBoard(2, RFIDnum);
+  }
+  if (comparetag(newtag, tag3) == true)
+  {
+    tellLocationBoard(3, RFIDnum);
+  }
+  if (comparetag(newtag, tag4) == true)
+  {
+    tellLocationBoard(4, RFIDnum);
+  }
+  if (comparetag(newtag, tag5) == true)
+  {
+    tellLocationBoard(5, RFIDnum);
+  }
+  if (comparetag(newtag, tag6) == true)
+  {
+    tellLocationBoard(6, RFIDnum);
+  }
+}
+
+void tellLocationBoard(int tagnum, int RFIDnum)
+{
+}
+
+
+void setup()
+{
+}
+
+void loop()
+{
+	ok = -1;
+	for (RFIDnum = 1 ; RFIDnum < 17 ; RFIDnum++)
+	{
+		switch (RFIDnum) { 
+			case 1:
+				if (port1.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port1.read();
+						newtag[z] = data1;
+					}
+					port1.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+				break;
+			case 2: 
+				if (port2.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port2.read();
+						newtag[z] = data1;
+					}
+					port2.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 3: 
+				if (port3.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port3.read();
+						newtag[z] = data1;
+					}
+					port3.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 4:  
+				if (port4.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port4.read();
+						newtag[z] = data1;
+					}
+					port4.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 5:  
+				if (port5.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port5.read();
+						newtag[z] = data1;
+					}
+					port5.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 6:  
+				if (port6.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port6.read();
+						newtag[z] = data1;
+					}
+					port6.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 7:  
+				if (port7.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port7.read();
+						newtag[z] = data1;
+					}
+					port7.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 8:  
+				if (port8.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port8.read();
+						newtag[z] = data1;
+					}
+					port8.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 9:  
+				if (port9.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port9.read();
+						newtag[z] = data1;
+					}
+					port9.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 10:  
+				if (port10.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port10.read();
+						newtag[z] = data1;
+					}
+					port10.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 11:  
+				if (port11.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port11.read();
+						newtag[z] = data1;
+					}
+					port11.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 12:  
+				if (port12.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port12.read();
+						newtag[z] = data1;
+					}
+					port12.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 13:  
+				if (port13.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port13.read();
+						newtag[z] = data1;
+					}
+					port13.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 14:  
+				if (port14.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port14.read();
+						newtag[z] = data1;
+					}
+					port14.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 15: 
+				if (port15.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port15.read();
+						newtag[z] = data1;
+					}
+					port15.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			case 16:  
+				if (port16.available() > 0) 
+				{
+					// read tag numbers
+					delay(100); // needed to allow time for the data to come in from the serial buffer.
+
+					for (int z = 0 ; z < 14 ; z++) // read the rest of the tag
+					{
+						data1 = port16.read();
+						newtag[z] = data1;
+					}
+					port16.flush(); // stops multiple reads
+
+					// do the tags match up?
+					checkmytags();
+				}
+			   break;
+			default: 
+			   break;
+			}
+		}
+}

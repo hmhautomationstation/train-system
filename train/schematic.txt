@@ -1,0 +1,41 @@
+rfid1  esp8266 -|
+				|
+rfid2  esp8266 -|										| modbus - train location board -	|- neopixel strip
+				| 	-----	MQTT over wifi	----->		| over wifi     and track switching	|
+		  ...  -| 										|									|- points 1
+				|										|									|- points 2
+rfidN esp8266  -|								Node-Red/MQTT broker						|
+													on VM									|- ...
+														|									|- points 14
+														|
+														| 	<----	MQTT over wifi ----->	|- train 1 nodemcu
+														|									|- train 2 nodemcu
+														|									|- train 3 nodemcu
+														|									|- ...
+
+train detected via rfid, coil for location set to value of train
+location board reads coils, updates each LED location to reflect values, switches points when needed
+train control reads coils, pauses trains when needed - needs to track location, previous + next segment of each train; preprogrammed route 
+
+FTNT firewall
+2x FTNT AP, 1 managed, 1 sensor
+NUC w/Node-REd/MQTT VM
+
+RFID reader nodes
+	ESP8266/NodeMCU https://miliohm.com/rc522-rfid-reader-with-nodemcu/
+	mount https://www.adafruit.com/product/6054
+	RFID reader https://pmdway.com/products/125khz-em4100-rfid-reader?_pos=1&_sid=64c0875e6&_ss=r
+	
+Train control nodes
+	ESP8266/NodeMCU
+	mount https://www.adafruit.com/product/6054
+	motor controller
+	
+Location board and switch controller
+	Arduino MEGA
+	LED strip https://www.adafruit.com/product/2842
+	servo https://www.adafruit.com/product/169
+	servo mount https://www.adafruit.com/product/6043
+	adapter https://www.adafruit.com/product/4252
+	PWM addon https://www.adafruit.com/product/1411
+	modbus server https://www.hackster.io/fusion_automate/create-modbus-tcp-ip-server-using-nodemcu-esp8266-d8d64c
