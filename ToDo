@@ -1,0 +1,43 @@
+Networking
+  Add FortiSwitch VLANs
+  Security Policy
+  APs
+    SSID
+    Policy
+Position Board
+  Networking - static IP 10.14.0.5
+  ModBus comms to PLC
+  position update loop
+PLC
+  Networking - static IP
+  registers
+  coils
+Points Controller
+  Networking - static IP 10.14.2.2
+  ModBus comms to PLC
+  coil <-> servo mapping
+  update loop
+RFID Readers
+  Networking - DHCP - 10.14.3.x/24 - map IP to block #/LED segment #/position register
+Train controllers
+  Integrate ESP32
+  integrate motor controller
+  new battery pack (rechargrable LiPo?)
+  Networking - DHCP - 10.14.1.x/24 - map IP to train #
+  MQTT comms to Node-Red
+Node-Red
+  scheduling and points control
+  MQTT
+  Modbus comms to PLC
+Support VMs
+  DC
+  RODC?
+  WSUS?
+  Terminal Server
+  File Server
+  IT workstation
+  OT Workstation
+  SCADA
+    find free solution
+  OT instrumentation
+    Zeek/Fing/arpwatch (all on same system?)
