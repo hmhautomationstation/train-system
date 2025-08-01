@@ -13,10 +13,10 @@ PLC
   registers
   coils
 Points Controller
-  Networking - static IP 10.14.2.2
-  ModBus comms to PLC
+x  Networking - static IP 10.14.2.2
+  ModBus comms to PLC - test
   coil <-> servo mapping
-  update loop
+x  update loop
 RFID Readers
   Networking - DHCP - 10.14.3.x/24 - map IP to block #/LED segment #/position register
 Train controllers
