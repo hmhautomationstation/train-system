@@ -5,15 +5,15 @@ Networking
     SSID
     Policy
 Position Board
-  Networking - static IP 10.14.0.5
-  ModBus comms to PLC
-  position update loop
+x  Networking
+  ModBus comms to PLC - test
+  position update loop -test
 PLC
   Networking - static IP
   registers
   coils
 Points Controller
-x  Networking - static IP 10.14.2.2
+x  Networking
   ModBus comms to PLC - test
   coil <-> servo mapping
 x  update loop
