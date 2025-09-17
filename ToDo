@@ -30,7 +30,7 @@ Node-Red
   MQTT
   Modbus comms to PLC
 Support VMs
-  DC
+  DC - DHCP and AD
   RODC?
   WSUS?
   Terminal Server
@@ -39,5 +39,16 @@ Support VMs
   OT Workstation
   SCADA
     find free solution
-  OT instrumentation
+  ORDR
     Zeek/Fing/arpwatch (all on same system?)
+  Check Point
+    SMS
+    vGW
+  Fortinet
+    FortiManager
+    FortiNAC
+  Juniper
+    EX2200-POE
+  Cisco
+    Industrial Switch(es)
+  
