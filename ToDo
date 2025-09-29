@@ -4,6 +4,10 @@ Networking
   APs
     SSID
     Policy
+  upgrade NAS, add 10G
+  bond 2x 1G microtik <-> workbench connection
+  bond 2x 1G workbench <-> desk connection
+  bond 2x 1G microtik <-> J2200-POE connection
 Position Board
 x  Networking
   ModBus comms to PLC - test
@@ -51,4 +55,5 @@ Support VMs
     EX2200-POE
   Cisco
     Industrial Switch(es)
+    ISE
   
