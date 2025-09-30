@@ -1,17 +1,38 @@
+https://lucid.app/lucidchart/663d614c-6a8a-4179-970d-2b2e137e30a3/edit?viewport_loc=-669%2C-2308%2C2554%2C1378%2C0_0&invitationId=inv_023e1bfa-3be4-4dcc-be79-c3eb1ba60da7
+
 Networking
+  Replace Desk switch
+  Replace Workbench switch
+  Replace NAS
   Add FortiSwitch VLANs
-  Security Policy
+Support VMs
+  DC - DHCP and AD
+  RODC? - remove
+  WSUS? - remove
+  Terminal Server - remove
+  File Server - remove
+  IT workstation 
+  OT Workstation - remove
+  SCADA - remove
+    find free solution
+  ORDR
+    Zeek/Fing/arpwatch (all on same system?)
+  Cisco ISE
+Check Point
+  SMS
+  vGW
+Fortinet
+  FortiManager
+  FortiNAC
+Juniper
+  EX2200-POE
+Cisco
+  Industrial Switch(es)
+Security Policy
   APs
     SSID
     Policy
-  upgrade NAS, add 10G
-  bond 2x 1G microtik <-> workbench connection
-  bond 2x 1G workbench <-> desk connection
-  bond 2x 1G microtik <-> J2200-POE connection
-Position Board
-x  Networking
-  ModBus comms to PLC - test
-  position update loop -test
+Recreate layout
 PLC
   Networking - static IP
   registers
@@ -26,34 +47,17 @@ RFID Readers
 Train controllers
   Integrate ESP32
   integrate motor controller
-  new battery pack (rechargrable LiPo?)
+  new battery pack (rechargrable LiPo?) 
+    https://www.philohome.com/pupbat/pupbat.htm
+    max size 6x8 studs (48x64mm)
   Networking - DHCP - 10.14.1.x/24 - map IP to train #
   MQTT comms to Node-Red
 Node-Red
   scheduling and points control
   MQTT
   Modbus comms to PLC
-Support VMs
-  DC - DHCP and AD
-  RODC?
-  WSUS?
-  Terminal Server
-  File Server
-  IT workstation
-  OT Workstation
-  SCADA
-    find free solution
-  ORDR
-    Zeek/Fing/arpwatch (all on same system?)
-  Check Point
-    SMS
-    vGW
-  Fortinet
-    FortiManager
-    FortiNAC
-  Juniper
-    EX2200-POE
-  Cisco
-    Industrial Switch(es)
-    ISE
+Position Board
+x  Networking
+  ModBus comms to PLC - test
+  position update loop -test
   
