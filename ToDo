@@ -16,7 +16,8 @@ Support VMs
   SCADA - remove
     find free solution
   ORDR
-    Zeek/Fing/arpwatch (all on same system?)
+  Zeek/Fing/arpwatch (all on same system?)
+  Netdisco
   Cisco ISE
 Check Point
   SMS
